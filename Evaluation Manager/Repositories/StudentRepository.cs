@@ -32,7 +32,7 @@ namespace Evaluation_Manager.Repositories {
             List<Student> students = new List<Student> { };
             string sql = "SELECT * FROM Students";
             DB.OpenConnection();
-            var reader = DB.GetDataReader();
+            var reader = DB.GetDataReader(sql);
             while (reader.Read()) {
                 Student student = CreateObject(reader);
                 students.Add(student);
